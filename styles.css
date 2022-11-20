@@ -2,4 +2,29 @@
   змінюємо стиль елемента, коли наводиться на нього курсор, 
   та запускаємо інші події на своїй вебсторінці. */
 
-  
+  /* скидання блокової моделі */
+  html {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: sans-serif;
+    color: #0a0a23;
+  }
+
+/* елементи з цим класом повністю приховую
+від візуальної сторінки, але щоб їх все одно повідомляли читачі екрана. */
+
+  span[class~="sr-only"] {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    -webkit-clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    padding: 0;
+    margin: -1px;
+  }
