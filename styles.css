@@ -2,20 +2,10 @@
   змінюємо стиль елемента, коли наводиться на нього курсор, 
   та запускаємо інші події на своїй вебсторінці. */
 
-  /* скидання блокової моделі */
-  html {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: sans-serif;
-    color: #0a0a23;
-  }
-
-/* елементи з цим класом повністю приховую
+  /* елементи з цим класом повністю приховую
 від візуальної сторінки, але щоб їх все одно повідомляли читачі екрана. */
 
-  span[class~="sr-only"] {
+span[class~="sr-only"] {
     border: 0;
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: inset(50%);
@@ -28,3 +18,64 @@
     padding: 0;
     margin: -1px;
   }
+
+  /* скидання блокової моделі */
+  html {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: sans-serif;
+    color: #0a0a23;
+  }
+
+  h1 {
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* це зображатиме вкладені елементи знизу вгору,
+   та встановлює простір між елементами заголовка */
+  h1 .flex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  /* псевдоселектор обирає першій елемент контейнера  */
+  h1 .flex span:first-of-type {
+    font-size: 0.7em;
+  }
+
+  /* цей псевдоселектор нацюлює останній елемент контейнера */
+  h1 .flex span:last-of-type {
+    font-size: 1.2em;
+  }
+
+  /* надаю таблиці край, адаптивність та центрування */
+  section {
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5;
+  }
+
+  #years {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    background-color: #0a0a23;
+    color: #fff;
+    z-index: 999;
+    margin: 0 -2px;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+  }
+/* Синтаксис span[class] буде націлений на будь-який елемент span,
+ який має встановлений атрибут class, незалежно від значення. */
+  #years span[class] {
+    font-weight: bold;
+    width: 4.5rem;
+    text-align: right;
+  }
+
