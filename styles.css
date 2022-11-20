@@ -79,3 +79,67 @@ span[class~="sr-only"] {
     text-align: right;
   }
 
+  .table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
+  }
+
+  /* Псевдоселектор :not() використовують для націлення всіх елементів,
+   які не відповідають селектору: в цьому разі 
+   будь-який з ваших елементів span, який не має клас sr-only */
+  
+   span:not(.sr-only) {
+    font-weight: normal;
+  }
+
+  /* властивість border-collapse на collapse, 
+  що дозволить краям клітинок згортатися в один край,
+   замість краю навколо кожної клітинки.
+    Крім того, властивість border на 0, щоб приховати самі краї. */
+  
+   table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+  }
+
+  table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+  }
+
+  tbody td {
+    width: 100vw; /*по ширине области просмотра*/
+    max-width: 4rem;
+    min-width: 4rem;
+  }
+
+  /* елементи th в межах тіла своєї таблиці 
+  та надаю їм ширину повного контейнера, менше за 12rem. */
+  
+  tbody th {
+    width: calc(100% - 12rem);
+  }
+/* вибере елементи tr, де єдиним класом є total */
+tr[class="total"] {
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+}
+
+/* націлюю елементи th в рядках таблиці з total class. */
+tr[class="total"] th {
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+} 
+
+/* націлює всі елементи td в рядках .total */
+tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+}
+
