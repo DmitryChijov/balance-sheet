@@ -87,9 +87,9 @@ span[class~="sr-only"] {
    які не відповідають селектору: в цьому разі 
    будь-який з ваших елементів span, який не має клас sr-only */
   
-   span:not(.sr-only) {
+   /* span:not(.sr-only) {
     font-weight: normal;
-  }
+  } */
 
   /* властивість border-collapse на collapse, 
   що дозволить краям клітинок згортатися в один край,
@@ -143,3 +143,49 @@ tr.total td {
     padding: 0 0.25rem;
 }
 
+/* псевдоселектрор, который нацелен на элемент с порядковым номером () в строках tr таблицы total */
+tr.total td:nth-of-type(3) {
+  padding-right: 0.5rem;
+}
+
+tr.total:hover {
+  cursor: pointer;
+  background-color: #99c9ff;
+}
+
+td.current {
+  font-style: italic;
+}
+
+/* фоновое изображение строкам с классом data */
+tr.data {
+  background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th {
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+/* стилизую элементы th с классом .desc.. в границах tr c классом .data
+придаю им блоковое значение, и стиль текста с отсупом  */
+tr.data th .description {
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+
+/* выравниваю текст с суммамы по вертикали вверх, по горизонтали справа + отступ*/
+tr.data td {
+  vertical-align: top;
+  text-align: right;
+  padding: 0.3rem 0.25rem 0;
+}
+ 
+/* добавляю последнему элементу td в пределах строк с селектором .data отступ */
+tr.data td:last-of-type {
+  padding-right: 0.5rem;
+}
